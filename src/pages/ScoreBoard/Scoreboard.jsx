@@ -30,7 +30,7 @@ const Scoreboard = (props) => {
       navigator
         .share({
           title: 'Quiz Score',
-          text: `I scored ${percentage.toFixed(2)}% in the quiz! Try it out: ${quizUrl}`,
+          text: `I scored ${percentage.toFixed(2)}% in the quiz on the Quizzy App ! Try out the Quizzy App and test your knowledge: ${quizUrl}`,
         })
         .then(() => console.log('Shared successfully'))
         .catch((error) => console.error('Error sharing:', error));
