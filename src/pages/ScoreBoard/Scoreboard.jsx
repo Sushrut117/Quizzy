@@ -24,7 +24,7 @@ const Scoreboard = (props) => {
   };
 
   const handleShare = () => {
-    const quizUrl = 'https://your-quiz-url.com'; // Replace with your actual quiz URL
+    const quizUrl = 'https://quizzy-delta.vercel.app/'; // Replace with your actual quiz URL
 
     if (navigator.share) {
       navigator
