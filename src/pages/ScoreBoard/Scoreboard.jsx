@@ -24,13 +24,13 @@ const Scoreboard = (props) => {
   };
 
   const handleShare = () => {
-    const quizUrl = 'https://your-quiz-url.com'; // Replace with your actual quiz URL
+    const quizUrl = 'https://quizzy-delta.vercel.app/'; // Replace with your actual quiz URL
 
     if (navigator.share) {
       navigator
         .share({
           title: 'Quiz Score',
-          text: `I scored ${percentage.toFixed(2)}% in the quiz! Try it out: ${quizUrl}`,
+          text: `I scored ${percentage.toFixed(2)}% in the quiz! Try out the quizzy app and test your knowledge ${quizUrl}`,
         })
         .then(() => console.log('Shared successfully'))
         .catch((error) => console.error('Error sharing:', error));
