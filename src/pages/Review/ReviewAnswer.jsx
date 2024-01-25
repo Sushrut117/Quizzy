@@ -6,7 +6,6 @@ const ReviewAnswer = () => {
   const context = useContext(quizContext);
   const { answerList } = context;
 
-  console.log(answerList)
   return (
     <>
       {answerList.map((item, index) => (
@@ -18,6 +17,7 @@ const ReviewAnswer = () => {
           options={item.options}
           category={item.category}
           num={index + 1}
+          isCorrect={item.myAnswer === item.rightAnswer}
         />
       ))}
     </>

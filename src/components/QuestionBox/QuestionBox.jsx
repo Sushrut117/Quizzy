@@ -9,7 +9,7 @@ const audio = new Audio(clickAudio);
 const QuestionBox = (props) => {
     const [selectedAns, setSelectedAns] = useState('');
     const context = useContext(quizContext);
-    const { setScore, score, next, setNext, len, answerList, setAnswerList } = context;
+    const { setScore, score, next, setNext, len, answerList,} = context;
     const { question, options, category } = props;
     let i = -1;
     const alphabet = ['A', 'B', 'C', 'D'];
@@ -46,17 +46,18 @@ const QuestionBox = (props) => {
             checkAnswer(selectedAns);
             setNext(next + 1);
             setSelectedAns('');
+            // Do not update answerList here
         }
-        setAnswerList([...answerList, { 'question': question, 'options': options[0], 'id': `id${next}`, 'category': category, 'myAnswer': selectedAns, 'rightAnswer': options[1] }]);
     };
+    
 
     const handlePreviousQuestion = () => {
         if (next > 0) {
-            setNext(next - 1);
             // Find the previous answer in the answerList
             const prevAnswer = answerList.find(item => item.id === `id${next}`);
             // Set the previously selected answer in the state
             setSelectedAns(prevAnswer ? prevAnswer.myAnswer : '');
+            setNext(next - 1);
             setTimer(30); // Reset timer for the new question
         }
     };
